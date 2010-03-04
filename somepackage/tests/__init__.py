@@ -1,4 +1,5 @@
 # implement a basic test under somepackage.tests
+import doctest
 import unittest
 import somepackage
 
@@ -15,5 +16,6 @@ def get_suite():
     
     loader = unittest.TestLoader()
     suite = loader.loadTestsFromModule(somepackage.tests)
+    suite.addTest(doctest.DocTestSuite(somepackage))
     return suite
 
